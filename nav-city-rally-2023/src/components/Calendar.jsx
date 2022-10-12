@@ -5,8 +5,11 @@ import { StyledSection } from '../StyledComponents.jsx'
 const CalendarSection = styled(StyledSection)`
   width: 100vw;
   color: #dddddd;
+  border-bottom: 1px solid #004d4d;
+  padding-bottom: 10rem;
   h1 {
     margin: 5rem;
+    margin-top: 10rem;
     font-size: 3.5rem;
     border-bottom: 1px solid;
     width: 40rem;
@@ -26,7 +29,7 @@ const StyledCalendar = styled(StyledSection)`
 const Event = styled(StyledSection)`
   flex-direction: row;
   justify-content: space-between;
-  width: 50rem;
+  width: 70rem;
   transition: 0.6s;
   padding-left: 4rem;
   padding-right: 4rem;
@@ -90,7 +93,7 @@ export default function Calendar () {
   })
   return (
     <CalendarSection>
-      <h1>Calendar</h1>
+      <h1>Schedule</h1>
       <StyledCalendar>
         {eventList}
       </StyledCalendar>

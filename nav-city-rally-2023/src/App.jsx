@@ -5,11 +5,11 @@ import Speaker from './components/Speaker'
 import NavBar from './components/NavBar'
 import Merch from './components/Merch'
 import Map from './components/Map'
-import Lodging from './components/Lodging'
 import Info from './components/Info'
 import Description from './components/Description'
 import Contact from './components/Contact'
 import Calendar from './components/Calendar'
+import Copyright from './components/Copyright.jsx'
 import ConferenceName from './components/ConferenceName'
 import {
   Body,
@@ -43,8 +43,7 @@ function App() {
         <div id='contact'>
           <Contact/>
         </div>
-        <Map/>
-        <Lodging/>
+        <Copyright/>
       </Components>
     </div>
   )

@@ -71,8 +71,7 @@ export default function Info () {
     'Date: April 15, 2023',
     'Time: 9:00 am to 5:30 pm',
     'registration opens at 8, first plenary begins at 9 sharp',
-    'Location: New LIfe Presbyterian Church (30 seconds north of the 8)',
-    'Address: 5333 Lake Murray Blvd, La Mesa, CA 91942'
+    'Location: New LIfe Presbyterian Church (30 seconds north of the 8)'
   ])
   let infoList = info.map((line, i) => {
     return (
@@ -103,6 +102,8 @@ export default function Info () {
             </h2>
             <ul>
               {infoList}
+              <li><a href='https://www.google.com/maps/place/5333+Lake+Murray+Blvd,+La+Mesa,+CA+91942/@32.7758948,-117.0461977,17z/data=!3m1!4b1!4m5!3m4!1s0x80d956fa8023fce1:0xab59759d56266d91!8m2!3d32.7758948!4d-117.044009' target='blank' style={{textDecoration: 'none', color: '#dddddd'}}> Address: 5333 Lake Murray Blvd, La Mesa, CA 91942</a>
+              </li>
             </ul>
           </div>
         </StyledImage>
