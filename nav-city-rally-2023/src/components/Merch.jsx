@@ -31,7 +31,7 @@ const MerchSection = styled(StyledSection)`
 const WorkshopLeftButton = styled(LeftButton)`
   position: absolute;
   color: #353535;
-  left: 30rem;
+  left: 1rem;
   border-radius: 1rem;
   width: 5rem;
   margin-top: 16.5rem;
@@ -43,7 +43,7 @@ const WorkshopLeftButton = styled(LeftButton)`
 const WorkshopRightButton = styled(RightButton)`
   position: absolute;
   color: #353535;
-  right: 30rem;
+  right: 1rem;
   border-radius: 1rem;
   width: 5rem;
   margin-top: 16.5rem;
@@ -69,6 +69,17 @@ const Item = styled(StyledSection)`
     object-fit: cover;
     height: 20rem;
     width: 15rem;
+  }
+  @media (max-width: 1800px) {
+    gap: 5rem;
+  }
+  @media (max-width: 1400px) {
+    flex-direction: column;
+    padding: 2rem;
+  }
+  @media (max-width: 1000px) {
+    flex-direction: column;
+    padding:1rem;
   }
 `
 

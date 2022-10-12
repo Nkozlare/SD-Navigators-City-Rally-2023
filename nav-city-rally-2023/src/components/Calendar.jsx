@@ -41,6 +41,17 @@ const Event = styled(StyledSection)`
     font-size: 1.5rem;
     font-weight: bold;
   }
+  @media (max-width: 1200px) {
+    width: 50rem;
+  }
+  @media (max-width: 800px) {
+    text-align: end;
+    width: 30rem;
+  }
+  @media (max-width: 800px) {
+    flex-direction: column;
+    text-align: end;
+  }
 `
 
 export default function Calendar () {

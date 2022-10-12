@@ -35,9 +35,24 @@ const WorkShopList = styled.div`
     color: #004d4d;
     background-color: #ffffff6e;
     padding: 2rem;
-    width: 97vw;
+    width: 96vw;
     border-top: 1px solid #004d4d;
     border-bottom: 1px solid #004d4d;
+  }
+  @media (max-width: 1000px) {
+    h2 {
+      width: 92vw;
+    }
+  }
+  @media (max-width: 800px) {
+    h2 {
+      width: 90vw;
+    }
+  }
+  @media (max-width: 700px) {
+    h2 {
+      width: 86vw;
+    }
   }
 `
 

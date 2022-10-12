@@ -25,6 +25,9 @@ const StyledSpeaker = styled(StyledSection)`
   img {
     height: 28rem;
   }
+  @media (max-width: 1200px) {
+    flex-direction: column;
+  }
 `
 
 const StyledSpeakerInfo = styled(StyledSection)`
@@ -33,6 +36,13 @@ const StyledSpeakerInfo = styled(StyledSection)`
     font-weight: bold;
     text-indent: 2rem;
     line-height: 1.7rem;
+  }
+  @media (max-width: 800px) {
+    width: 20rem;
+    p {
+      text-align: center;
+      text-indent: 0rem;
+    }
   }
 `
 
@@ -57,6 +67,11 @@ const VideoList = styled.div`
     width: 35rem;
     height: 25rem;
     margin-top: 1rem;
+  }
+  @media (max-width: 800px) {
+    div {
+      width: 20rem;
+    }
   }
 `
 
