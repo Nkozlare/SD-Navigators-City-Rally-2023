@@ -69,8 +69,8 @@ const StyledImage = styled(StyledSection)`
 export default function Info () {
   const [info, setInfo] = useState([
     'Date: April 15, 2023',
-    'Time: 9:00 am to 5:30 pm',
-    'registration opens at 8, first plenary begins at 9 sharp',
+    'Time: 9:00 am to 5:00 pm',
+    'registration from 8 to 8:45, first plenary at 9',
     'Location: New LIfe Presbyterian Church (30 seconds north of the 8)'
   ])
   let infoList = info.map((line, i) => {
@@ -84,18 +84,18 @@ export default function Info () {
     <>
       <StyledInfo>
         <h1>
-          Sharing Christ in a Polarized Environment
+          A One-Day SD Navigators Discipleship Conference
         </h1>
         <RegisterButton>
-          register here
+          Register here
         </RegisterButton>
       </StyledInfo>
       <StyledMeta>
-        <StyledImage>
+        <StyledImage id='info'>
           <div>
-            <h1>
-              CHANGE<br></br>
-              Conference
+            <h1 >
+              RALLY 2023<br></br>
+              A Navigators Conference
             </h1>
             <h2>
               General Info

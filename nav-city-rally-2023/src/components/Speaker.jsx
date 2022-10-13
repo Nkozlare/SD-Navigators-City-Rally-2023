@@ -26,7 +26,12 @@ const StyledSpeaker = styled(StyledSection)`
     height: 28rem;
   }
   @media (max-width: 1200px) {
-    flex-direction: column;
+    flex-direction: column-reverse;
+    img {
+      width: 17rem;
+      height: auto;
+      margin-top: -6rem;
+    }
   }
 `
 
@@ -51,6 +56,9 @@ const VideoCarousel = styled(StyledSection)`
   justify-content: start;
   overflow: hidden;
   width: 40rem;
+  @media (max-width: 800px) {
+    width: 25rem;
+  }
 `
 
 const VideoList = styled.div`
@@ -67,6 +75,7 @@ const VideoList = styled.div`
     width: 35rem;
     height: 25rem;
     margin-top: 1rem;
+
   }
   @media (max-width: 800px) {
     div {

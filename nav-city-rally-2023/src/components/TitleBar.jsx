@@ -26,6 +26,9 @@ const StyledLinks = styled(StyledSection)`
       color: #690000;
     }
   }
+  @media (max-width: 800px) {
+    flex-direction: column;
+  }
 `
 
 export default function TitleBar () {
@@ -41,7 +44,7 @@ export default function TitleBar () {
     <StyledTitle>
       <img src='https://www.navigators.org/wp-content/uploads/2018/04/Navigators-Favicon.png'/>
       <h1>
-        SD Navigators City Rally 2023
+        San Diego Navigators
       </h1>
       <StyledLinks>
       <a href='https://www.w3schools.com' target='_blank'>Register</a>

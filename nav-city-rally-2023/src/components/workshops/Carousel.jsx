@@ -86,7 +86,7 @@ export default function Carousel () {
   var [x, setx] = useState(0)
   let [workshops, setWorkshops] = useState([
     {
-      url: 'https://images.unsplash.com/photo-1499652848871-1527a310b13a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80',
+      url: 'https://images.unsplash.com/photo-1533000971552-6a962ff0b9f9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80',
       name: 'Word 101 - Meeting God in the Word',
       leader: '',
     },
@@ -97,16 +97,16 @@ export default function Carousel () {
     },
     {
       url: 'https://images.unsplash.com/photo-1547958481-9753b5467c80?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',
-      name: 'Witnessing 101 - Sharing Christ in a Hostile Environment',
+      name: 'Witnessing 101 - Sharing Christ in a Polarized Culture',
       leader: '',
     },
     {
       url: 'https://images.unsplash.com/photo-1523908511403-7fc7b25592f4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',
-      name: 'Discipleship 101 - Building a Life-to-Life Discipleship Relationship',
+      name: 'Discipleship 101 - Building Life-to-Life Discipleship Relationships',
       leader: '',
     },
     {
-      url: 'https://plus.unsplash.com/premium_photo-1663051303500-c85bef3f05f6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',
+      url: 'https://images.unsplash.com/photo-1517732306149-e8f829eb588a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1172&q=80',
       name: 'Discipleship 201 - Making Disciples Where You Live, Work and Play',
       leader:'',
     },
@@ -117,7 +117,7 @@ export default function Carousel () {
     },
     {
       url: 'https://images.unsplash.com/photo-1562504208-03d85cc8c23e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',
-      name: 'To the Nations!',
+      name: 'How Can I Impact the Nations?',
       leader: '',
     },
     {
@@ -148,6 +148,20 @@ export default function Carousel () {
   const goRight = () => {
     setx(x - 100);
   }
+
+  const timedCarouselShift = () => {
+    setTimeout(() => {
+    if (x > (-100 * workshops.length + 100)) {
+      goRight();
+    } else {
+      setx(0)
+    }
+    }, 6000)
+  }
+
+  useEffect(() => {
+    timedCarouselShift();
+  })
 
   let workshopList = workshops.map((workshop, i) => {
     return (

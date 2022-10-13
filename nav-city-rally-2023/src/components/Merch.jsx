@@ -26,6 +26,12 @@ const MerchSection = styled(StyledSection)`
       width: 30rem;
     }
   }
+  @media (max-width: 800px) {
+    width: 35rem;
+    h1 {
+      width: 100vw;
+    }
+  }
 `
 
 const WorkshopLeftButton = styled(LeftButton)`
@@ -88,10 +94,6 @@ export default function Merch () {
     {
       url: 'https://images.unsplash.com/photo-1622445275463-afa2ab738c34?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80',
       item: 'Shirt'
-    },
-    {
-      url: 'https://images.unsplash.com/photo-1616241673347-67fb5dfa3167?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=728&q=80',
-      item: 'mug'
     },
     {
       url: 'https://images.unsplash.com/photo-1526280760714-f9e8b26f318f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80',

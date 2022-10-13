@@ -20,6 +20,12 @@ const CalendarSection = styled(StyledSection)`
       width: 30rem;
     }
   }
+  @media (max-width: 800px) {
+    width: 32rem;
+    h1 {
+      width: 100vw;
+    }
+  }
 `
 
 const StyledCalendar = styled(StyledSection)`
@@ -62,34 +68,34 @@ export default function Calendar () {
     },
     {
       time: '10:30',
-      event: 'Coffee Break'
+      event: 'Coffee Break (Fellowship Hall)'
     },
     {
-      time: '11:00',
+      time: '10:45',
       event: 'Workshop 1'
     },
     {
-      time: '12:15',
+      time: '12:00',
       event: ' Lunch (provided)'
     },
     {
-      time: '1:30',
+      time: '1:15',
       event: 'Plenary 2 (with discussion and prayer)'
     },
     {
-      time: '3:15',
+      time: '2:45',
+      event: 'Coffee Break (Fellowship Hall)'
+    },
+    {
+      time: '3:00',
       event: 'Workshop 2'
     },
     {
-      time: '4:30',
-      event: 'Coffee Break'
-    },
-    {
-      time: '4:45',
+      time: '4:15',
       event: 'Plenary 3'
     },
     {
-      time: '5:30',
+      time: '5:00',
       event: 'Dismissed'
     },
   ])

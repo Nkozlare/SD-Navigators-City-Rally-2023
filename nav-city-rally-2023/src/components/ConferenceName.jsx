@@ -14,15 +14,19 @@ const StyledName = styled(StyledSection)`
   h1 {
     text-align: center;
     font-size: 12rem;
-    margin-bottom: -2rem;
+    margin-bottom: 10rem;
     transition: 0.8s;
     transition-timing-function: ease-out;
     border-bottom: 2px solid #004d4d;
-    width: 55rem;
+    width: 70rem;
     &:hover {
       color: #690000;
-      width: 70rem;
+      width: 80rem;
       border-bottom: 2px solid #690000;
+    }
+    @media (max-width: 800px) {
+      font-size: 4rem;;
+      width: 30rem;
     }
   }
   p {
@@ -34,8 +38,7 @@ const StyledName = styled(StyledSection)`
 export default function ConferenceName () {
   return (
     <StyledName>
-      <h1>CHANGE</h1>
-      <p>FALLCON 2023</p>
+      <h1>RALLY 2023</h1>
     </StyledName>
   )
 }

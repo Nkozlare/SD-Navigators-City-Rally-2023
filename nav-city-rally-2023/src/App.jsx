@@ -25,7 +25,7 @@ function App() {
       <Components>
         <TitleBar/>
         <ConferenceName/>
-        <div id='info'>
+        <div>
           <Info/>
         </div>
         <div id='speaker'>
