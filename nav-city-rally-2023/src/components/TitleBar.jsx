@@ -11,6 +11,12 @@ const StyledTitle = styled(StyledSection)`
   h1 {
     font-size: 4rem;
   }
+  @media (max-width: 800px) {
+    h1 {
+      font-size: 3rem;
+      text-align: center;
+    }
+  }
 `
 const StyledLinks = styled(StyledSection)`
   flex-direction: row;

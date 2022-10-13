@@ -12,6 +12,7 @@ const Body = createGlobalStyle`
     background-attachment: fixed;
     margin: 0px;
     overflow-x: hidden;
+    min-width: 20rem;
   }
 `
 

@@ -44,6 +44,9 @@ const WorkshopLeftButton = styled(LeftButton)`
   &:hover {
     color: #690000;
   }
+  @media (max-width: 600px) {
+    left: -1rem;
+  }
 `
 
 const WorkshopRightButton = styled(RightButton)`
@@ -56,6 +59,9 @@ const WorkshopRightButton = styled(RightButton)`
   &:hover {
     color: #690000;
   }
+  @media (max-width: 600px) {
+    right: -1rem;
+  }
 `
 
 const MerchCarousel = styled(StyledSection)`
@@ -64,6 +70,9 @@ const MerchCarousel = styled(StyledSection)`
   flex-direction: right;
   flex-direction: row;
   width: 30vw;
+  @media (max-width: 600px) {
+    width: 15rem;
+  }
 `
 
 const Item = styled(StyledSection)`
@@ -83,9 +92,12 @@ const Item = styled(StyledSection)`
     flex-direction: column;
     padding: 2rem;
   }
-  @media (max-width: 1000px) {
+  @media (max-width: 600px) {
     flex-direction: column;
     padding:1rem;
+    padding: 0;
+    gap: 2rem;
+    width: 20rem;
   }
 `
 

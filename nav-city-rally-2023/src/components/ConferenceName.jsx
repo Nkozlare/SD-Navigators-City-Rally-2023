@@ -25,13 +25,10 @@ const StyledName = styled(StyledSection)`
       border-bottom: 2px solid #690000;
     }
     @media (max-width: 800px) {
-      font-size: 4rem;;
-      width: 30rem;
+      font-size: 4rem;
+      width: 15rem;
+      margin: 6rem;
     }
-  }
-  p {
-    font-size: 4rem;
-    margin-bottom: 7.5rem;
   }
 `
 

@@ -18,12 +18,23 @@ const StyledInfo = styled(StyledSection)`
     margin-top: 4rem;
     margin-bottom:6rem;
   }
+  @media (max-width: 800px) {
+    width: 50rem;
+    h1 {
+      width: 15rem;
+      text-align: center;
+      font-size: 1.5rem;
+    }
+  }
 `
 
 const StyledMeta = styled(StyledSection)`
   background-color: white;
   padding: 4rem;
   border-bottom: 1px solid #004d4d;
+  @media (max-width: 800px) {
+    width: 42rem;
+  }
 `
 
 const StyledImage = styled(StyledSection)`
@@ -38,6 +49,9 @@ const StyledImage = styled(StyledSection)`
     border-bottom: 1px solid #dddddd;
     padding: 1rem;
     width: 40rem;
+    @media (max-width: 800px) {
+      width: 15rem;
+    }
   }
   div {
     display: flex;
@@ -62,7 +76,17 @@ const StyledImage = styled(StyledSection)`
         margin-top: 0.5rem;
         font-size: 1.1rem;
       }
+      @media (max-width: 800px) {
+        width: 16rem;
+        margin-left: -1rem;
+      }
     }
+    @media (max-width: 800px) {
+      width: 30rem;
+    }
+  }
+  @media (max-width: 800px) {
+    width: 40rem;
   }
 `
 

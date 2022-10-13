@@ -7,6 +7,7 @@ const StyledCopyright = styled(StyledSection)`
     color: #dddddd;
     font-size: 1rem;
     padding: 2rem;
+    text-align: center;
   }
 `
 

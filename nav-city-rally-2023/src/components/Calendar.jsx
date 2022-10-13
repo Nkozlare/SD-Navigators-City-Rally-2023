@@ -57,6 +57,9 @@ const Event = styled(StyledSection)`
   @media (max-width: 800px) {
     flex-direction: column;
     text-align: end;
+    p {
+      width: 15rem;
+    }
   }
 `
 

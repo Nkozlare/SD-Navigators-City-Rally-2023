@@ -42,6 +42,7 @@ const WorkShopList = styled.div`
   @media (max-width: 1000px) {
     h2 {
       width: 92vw;
+      top: 40%;
     }
   }
   @media (max-width: 800px) {
@@ -59,24 +60,32 @@ const WorkShopList = styled.div`
 const WorkshopLeftButton = styled(LeftButton)`
   position: absolute;
   color: #353535;
-  left: 1rem;
+  left: 4rem;
   border-radius: 1rem;
   width: 5rem;
   margin-top: 16.5rem;
   &:hover {
-    color: #dddddd;
+    color: #080808;
+  }
+  @media (max-width: 800px) {
+    margin-top: 47rem;
+    color: white;
   }
 `
 
 const WorkshopRightButton = styled(RightButton)`
   position: absolute;
   color: #353535;
-  right: 1rem;
+  right: 4rem;
   border-radius: 1rem;
   width: 5rem;
   margin-top: 16.5rem;
   &:hover {
-    color: #dddddd;
+    color: #080808;
+  }
+  @media (max-width: 800px) {
+    margin-top: 47rem;
+    color: white;
   }
 `
 

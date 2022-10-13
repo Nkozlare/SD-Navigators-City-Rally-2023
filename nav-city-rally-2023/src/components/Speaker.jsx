@@ -42,8 +42,11 @@ const StyledSpeakerInfo = styled(StyledSection)`
     text-indent: 2rem;
     line-height: 1.7rem;
   }
+  h1 {
+    text-align: center;
+  }
   @media (max-width: 800px) {
-    width: 20rem;
+    width: 16rem;
     p {
       text-align: center;
       text-indent: 0rem;
@@ -57,7 +60,7 @@ const VideoCarousel = styled(StyledSection)`
   overflow: hidden;
   width: 40rem;
   @media (max-width: 800px) {
-    width: 25rem;
+    width: 26.5rem;
   }
 `
 
@@ -79,7 +82,8 @@ const VideoList = styled.div`
   }
   @media (max-width: 800px) {
     div {
-      width: 20rem;
+      width: 18rem;
+      height: 15rem;
     }
   }
 `

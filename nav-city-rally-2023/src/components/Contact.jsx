@@ -11,6 +11,7 @@ const StyledContact = styled(StyledSection)`
   p {
     font-size: 1.4rem;
     font-weight: 600;
+    text-align: center;
   }
   a {
     font-size: 1.4rem;
@@ -18,8 +19,14 @@ const StyledContact = styled(StyledSection)`
     text-decoration: none;
     color: #004d4d;
     transition: 0.3s;
+    text-align: center;
     &:hover {
       color: #690000;
+    }
+  }
+  @media (max-width: 800px) {
+    a {
+      width: 18rem;
     }
   }
 `
