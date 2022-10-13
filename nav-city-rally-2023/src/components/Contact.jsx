@@ -45,6 +45,7 @@ export default function Contact () {
         Location
       </h1>
       <a href='https://www.google.com/maps/place/5333+Lake+Murray+Blvd,+La+Mesa,+CA+91942/@32.7758948,-117.0461977,17z/data=!3m1!4b1!4m5!3m4!1s0x80d956fa8023fce1:0xab59759d56266d91!8m2!3d32.7758948!4d-117.044009' target='blank'> Address: 5333 Lake Murray Blvd, La Mesa, CA 91942</a>
+      <a href="https://imgbb.com/"><img src="https://i.ibb.co/0rS0w64/SD-Nav-Logo.jpg" alt="SD-Nav-Logo" border="0"/></a>
     </StyledContact>
   )
 }
