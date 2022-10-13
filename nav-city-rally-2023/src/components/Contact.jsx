@@ -27,6 +27,9 @@ const StyledContact = styled(StyledSection)`
   @media (max-width: 800px) {
     a {
       width: 18rem;
+      img {
+        width: 18rem;
+      }
     }
   }
 `
