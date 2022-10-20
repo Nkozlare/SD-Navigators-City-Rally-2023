@@ -5,7 +5,7 @@ import {
   RightButton,
   LeftButton
  } from '../../StyledComponents.jsx'
-import { faChevronLeft, faChevronRight, faChevronUp, faChevronDown } from '@fortawesome/free-solid-svg-icons'
+import { faChevronLeft, faChevronRight, faChevronUp, faChevronDown, faCircle } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const StyledCarousel = styled(StyledSection)`
@@ -15,6 +15,13 @@ const StyledCarousel = styled(StyledSection)`
   justify-content: start;
   transition: 0.3s;
   border-top: 1px solid #004d4d;
+`
+
+const StyledSelectors = styled(StyledSection)`
+  flex-direction: row;
+  gap: 0.7rem;
+  margin-top: -2.5rem;
+  z-index: 1;
 `
 
 const Workshop = styled.img`
@@ -27,7 +34,7 @@ const WorkShopList = styled.div`
   transition: 1s;
   h2 {
     position: absolute;
-    top: 50%;
+    top: 48%;
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 3rem;
@@ -69,7 +76,7 @@ const WorkshopLeftButton = styled(LeftButton)`
   }
   @media (max-width: 800px) {
     margin-top: 47rem;
-    color: white;
+    color: #004d4d;
   }
 `
 
@@ -85,7 +92,7 @@ const WorkshopRightButton = styled(RightButton)`
   }
   @media (max-width: 800px) {
     margin-top: 47rem;
-    color: white;
+    color: #004d4d;
   }
 `
 
@@ -93,6 +100,7 @@ const WorkshopRightButton = styled(RightButton)`
 
 export default function Carousel () {
   var [x, setx] = useState(0)
+  let [autoScroll, setAutoScroll] = useState(true);
   let [workshops, setWorkshops] = useState([
     {
       url: 'https://images.unsplash.com/photo-1533000971552-6a962ff0b9f9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80',
@@ -150,6 +158,7 @@ export default function Carousel () {
       leader: '',
     },
   ])
+
   const goLeft = () => {
     setx(x + 100);
   }
@@ -160,11 +169,13 @@ export default function Carousel () {
 
   const timedCarouselShift = () => {
     setTimeout(() => {
-    if (x > (-100 * workshops.length + 100)) {
-      goRight();
-    } else {
-      setx(0)
-    }
+      if (autoScroll) {
+        if (x > (-100 * workshops.length + 100)) {
+          goRight();
+        } else {
+          setx(0)
+        }
+      }
     }, 6000)
   }
 
@@ -181,13 +192,33 @@ export default function Carousel () {
     )
   })
 
+  let selectors = workshops.map((circle, i) => {
+    return (
+      <div key={i} onClick={() => { 
+        setx(i * -100); 
+        setAutoScroll(false);
+        }}>
+        {x === i * -100 ? <FontAwesomeIcon icon={faCircle} /> : <FontAwesomeIcon icon={faCircle} style={{color: '#dddddd'}}/>}
+      </div>
+    )
+  })
+
   return (
     <>
       <StyledCarousel>
         {workshopList}
       </StyledCarousel>
-      {x > (-100 * workshops.length + 100) ? (<WorkshopRightButton data-testid='right-arrow' onClick={goRight}><FontAwesomeIcon icon={faChevronRight} /></WorkshopRightButton>) : (<div></div>)}
-      {x === 0 ? (<div></div>) : (<WorkshopLeftButton data-testid='left-arrow' onClick={goLeft}><FontAwesomeIcon icon={faChevronLeft} /></WorkshopLeftButton>)}
+      <StyledSelectors>
+        {selectors}
+      </StyledSelectors>
+      {x > (-100 * workshops.length + 100) ? (<WorkshopRightButton data-testid='right-arrow' onClick={() => { 
+        goRight(); 
+        setAutoScroll(false); 
+        }}><FontAwesomeIcon icon={faChevronRight} /></WorkshopRightButton>) : (<div></div>)}
+      {x === 0 ? (<div></div>) : (<WorkshopLeftButton data-testid='left-arrow' onClick={() => { 
+        goLeft(); 
+        setAutoScroll(false); 
+        }}><FontAwesomeIcon icon={faChevronLeft} /></WorkshopLeftButton>)}
     </>
   )
 }

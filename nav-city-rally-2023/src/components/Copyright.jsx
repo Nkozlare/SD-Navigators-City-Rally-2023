@@ -11,11 +11,15 @@ const StyledCopyright = styled(StyledSection)`
   }
 `
 
+const LinkedInRef = styled.a`
+  color: #dddddd;
+`
+
 export default function Copyright () {
   return (
     <StyledCopyright>
       <h1>
-        ©2022 by Nick Kozlarek. www.linkedin.com/in/nicholas-kozlarek.
+        ©2022 by Nick Kozlarek. <LinkedInRef href='https://www.linkedin.com/in/nicholas-kozlarek' target='_blank'>Linkedin</LinkedInRef>
       </h1>
     </StyledCopyright>
   )

@@ -41,7 +41,7 @@ export default function TitleBar () {
   function handleScroll (section) {
     let offsetTop  = document.getElementById(section).offsetTop;
     window.scrollTo({
-      top: offsetTop-100,
+      top: offsetTop-0,
       behavior: "smooth"
     });
   }
