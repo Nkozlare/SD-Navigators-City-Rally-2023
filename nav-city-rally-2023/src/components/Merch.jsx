@@ -10,7 +10,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const MerchSection = styled(StyledSection)`
   background-color: #dddddd;
-  border-bottom: 1px solid #004d4d;
   width: 100vw;
   color: #690000;
   padding-bottom: 10rem;
@@ -100,6 +99,14 @@ const Item = styled(StyledSection)`
     width: 20rem;
   }
 `
+const BackToTop = styled.div`
+  background-color: #dddddd;
+  text-align: center;
+  border-bottom: 1px solid #004d4d;
+  cursor: pointer;
+  font-weight: bold;
+  color: #004d4d;
+`
 
 export default function Merch () {
   const [merch, setMerch] = useState([
@@ -120,6 +127,12 @@ export default function Merch () {
     setx(x - 100);
   }
   var [x, setx] = useState(0)
+  function handleScroll (section) {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  }
 
   const merchList = merch.map((item, i) => {
     return (
@@ -131,13 +144,16 @@ export default function Merch () {
   })
 
   return (
-    <MerchSection>
-      <h1>Merch!</h1>
-      <MerchCarousel>
-        {merchList}
-      </MerchCarousel>
-      {x > (-100 * merch.length + 100) ? (<WorkshopRightButton data-testid='right-arrow' onClick={goRight}><FontAwesomeIcon icon={faChevronRight} /></WorkshopRightButton>) : (<div></div>)}
-      {x === 0 ? (<div></div>) : (<WorkshopLeftButton data-testid='left-arrow' onClick={goLeft}><FontAwesomeIcon icon={faChevronLeft} /></WorkshopLeftButton>)}
-    </MerchSection>
+    <>
+      <MerchSection>
+        <h1>Merch!</h1>
+        <MerchCarousel>
+          {merchList}
+        </MerchCarousel>
+        {x > (-100 * merch.length + 100) ? (<WorkshopRightButton data-testid='right-arrow' onClick={goRight}><FontAwesomeIcon icon={faChevronRight} /></WorkshopRightButton>) : (<div></div>)}
+        {x === 0 ? (<div></div>) : (<WorkshopLeftButton data-testid='left-arrow' onClick={goLeft}><FontAwesomeIcon icon={faChevronLeft} /></WorkshopLeftButton>)}
+      </MerchSection>
+      <BackToTop onClick={() => { handleScroll('title-bar'); console.log('clicked')}}>top <FontAwesomeIcon icon={faChevronUp} /></BackToTop>
+    </>
   )
 }

@@ -81,6 +81,9 @@ const RightButton = styled.button`
     }
 `
 
+const BackToTop = styled.div`
+`
+
 export {
   Body,
   Components,
@@ -88,4 +91,5 @@ export {
   RegisterButton,
   RightButton,
   LeftButton,
+  BackToTop,
 }

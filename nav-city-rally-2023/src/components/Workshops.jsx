@@ -15,24 +15,40 @@ const WorkshopSection = styled(StyledSection)`
   padding-bottom: 10rem;
   background-color: #ffffff;
   width: 100vw;
-  border-bottom: 1px solid #004d4d;
   color: #690000;
   h1{
     margin-bottom: 5rem;
     font-size: 3.5rem;
   }
 `
+const BackToTop = styled.div`
+  background-color: #ffffff;
+  text-align: center;
+  border-bottom: 1px solid #004d4d;
+  cursor: pointer;
+  font-weight: bold;
+  color: #004d4d;
+`
 
 
 export default function Workshops () {
+  function handleScroll (section) {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  }
 
 
   return (
-    <WorkshopSection>
-      <h1>
-        Workshops
-      </h1>
-      <Carousel/>
-    </WorkshopSection>
+    <>
+      <WorkshopSection>
+        <h1>
+          Workshops
+        </h1>
+        <Carousel/>
+      </WorkshopSection>
+      <BackToTop onClick={() => { handleScroll('title-bar'); console.log('clicked')}}>top <FontAwesomeIcon icon={faChevronUp} /></BackToTop>
+    </>
   )
 }

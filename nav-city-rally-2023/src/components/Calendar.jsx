@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
 import styled from 'styled-components';
 import { StyledSection } from '../StyledComponents.jsx'
+import { faChevronLeft, faChevronRight, faChevronUp, faChevronDown } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const CalendarSection = styled(StyledSection)`
   width: 100vw;
   color: #dddddd;
-  border-bottom: 1px solid #004d4d;
   padding-bottom: 10rem;
   h1 {
     margin: 5rem;
@@ -30,6 +31,13 @@ const CalendarSection = styled(StyledSection)`
 
 const StyledCalendar = styled(StyledSection)`
 
+`
+const BackToTop = styled.div`
+  text-align: center;
+  border-bottom: 1px solid #004d4d;
+  cursor: pointer;
+  font-weight: bold;
+  color: #ffffff;
 `
 
 const Event = styled(StyledSection)`
@@ -71,7 +79,7 @@ export default function Calendar () {
     },
     {
       time: '10:30',
-      event: 'Coffee Break (Fellowship Hall)'
+      event: 'Coffee Break'
     },
     {
       time: '10:45',
@@ -87,7 +95,7 @@ export default function Calendar () {
     },
     {
       time: '2:45',
-      event: 'Coffee Break (Fellowship Hall)'
+      event: 'Coffee Break'
     },
     {
       time: '3:00',
@@ -111,12 +119,21 @@ export default function Calendar () {
       </Event>
     )
   })
+  function handleScroll (section) {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  }
   return (
-    <CalendarSection>
-      <h1>Schedule</h1>
-      <StyledCalendar>
-        {eventList}
-      </StyledCalendar>
-    </CalendarSection>
+    <>
+      <CalendarSection>
+        <h1>Schedule</h1>
+        <StyledCalendar>
+          {eventList}
+        </StyledCalendar>
+      </CalendarSection>
+      <BackToTop onClick={() => { handleScroll('title-bar'); console.log('clicked')}}>top <FontAwesomeIcon icon={faChevronUp} /></BackToTop>
+    </>
   )
 }

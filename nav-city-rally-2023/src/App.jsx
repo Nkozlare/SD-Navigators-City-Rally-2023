@@ -23,7 +23,7 @@ function App() {
     <div className="App">
       <Body/>
       <Components>
-        <TitleBar/>
+        <TitleBar id='title-bar'/>
         <ConferenceName/>
         <div>
           <Info/>

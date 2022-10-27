@@ -2,8 +2,10 @@ import React, { useState, useEffect } from "react";
 import styled from 'styled-components';
 import {
   StyledSection,
-  RegisterButton
+  RegisterButton,
  } from '../StyledComponents.jsx'
+ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+ import { faChevronLeft, faChevronRight, faChevronUp, faChevronDown, faCircle } from '@fortawesome/free-solid-svg-icons'
 
 const StyledInfo = styled(StyledSection)`
   background-color: #dddddd;
@@ -31,7 +33,6 @@ const StyledInfo = styled(StyledSection)`
 const StyledMeta = styled(StyledSection)`
   background-color: white;
   padding: 4rem;
-  border-bottom: 1px solid #004d4d;
   @media (max-width: 800px) {
     width: 42rem;
   }
@@ -90,11 +91,20 @@ const StyledImage = styled(StyledSection)`
   }
 `
 
+const BackToTop = styled.div`
+  background-color: white;
+  text-align: center;
+  border-bottom: 1px solid #004d4d;
+  cursor: pointer;
+  font-weight: bold;
+  color: #004d4d;
+`
+
 export default function Info () {
   const [info, setInfo] = useState([
     'Date: April 15, 2023',
     'Time: 9:00 am to 5:00 pm',
-    'registration from 8 to 8:45, first plenary at 9',
+    'Registration from 8 to 8:45, first plenary at 9',
     'Location: New LIfe Presbyterian Church (30 seconds north of the 8)'
   ])
   let infoList = info.map((line, i) => {
@@ -104,6 +114,12 @@ export default function Info () {
       </li>
     )
   })
+  function handleScroll (section) {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  }
   return (
     <>
       <StyledInfo>
@@ -132,6 +148,7 @@ export default function Info () {
           </div>
         </StyledImage>
       </StyledMeta>
+      <BackToTop onClick={() => { handleScroll('title-bar'); console.log('clicked')}}>top <FontAwesomeIcon icon={faChevronUp} /></BackToTop>
     </>
   )
 }

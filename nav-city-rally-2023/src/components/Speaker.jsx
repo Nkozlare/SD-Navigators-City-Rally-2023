@@ -14,8 +14,12 @@ const StyledSpeakerSection = styled(StyledSection)`
   padding: 4rem;
   background-color: #dddddd;
   width: 100vw;
-  border-bottom: 1px solid #004d4d;
   color: #690000;
+  h2 {
+    margin-top: 8rem;
+    font-size: 2rem;
+    text-align: center;
+  }
 `
 
 const StyledSpeaker = styled(StyledSection)`
@@ -59,6 +63,7 @@ const VideoCarousel = styled(StyledSection)`
   justify-content: start;
   overflow: hidden;
   width: 40rem;
+  margin-top: -8rem;
   @media (max-width: 800px) {
     width: 26.5rem;
   }
@@ -67,10 +72,10 @@ const VideoCarousel = styled(StyledSection)`
 const VideoList = styled.div`
   color: #690000;
   text-align: center;
-  padding: 4rem;
+  padding: 2rem;
   transition: 0.8s;
   h2 {
-    font-size: 2.3rem;
+    font-size: 1.7rem;
     border-bottom: 1px solid #690000;
     padding-bottom: 1rem;
   }
@@ -95,6 +100,15 @@ const VideoSection = styled.div`
   width: 60rem;
 `
 
+const BackToTop = styled.div`
+  background-color: #dddddd;
+  text-align: center;
+  border-bottom: 1px solid #004d4d;
+  cursor: pointer;
+  font-weight: bold;
+  color: #004d4d;
+`
+
 
 
 export default function Speaker () {
@@ -110,6 +124,12 @@ export default function Speaker () {
     }
   ])
 
+  function handleScroll (section) {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  }
   // on click function to move the carousel to the left
   const goLeft = () => {
     setx(x + 100);
@@ -129,25 +149,32 @@ export default function Speaker () {
   })
 
   return (
-    <StyledSpeakerSection>
-      <StyledSpeaker>
-        <img src='https://media-exp1.licdn.com/dms/image/C5603AQHSKoAijeNnzQ/profile-displayphoto-shrink_800_800/0/1517269864460?e=1671062400&v=beta&t=Ml2HYEnDXva1qAvB243PDWzBL8Go9DLhRnyS2ca9L5E' alt='picture of Ben Nugent'/>
-        <StyledSpeakerInfo>
-          <h1>Conference Speaker</h1>
-          <h2>Ben Nugent</h2>
-          <p>
-            Drew Frazer currently serves at Montana State University as a Campus Director with The Navigators. He has worked with college students for the past 22 years and has a love for evangelism and discipleship. He likes to say "Give me a campus or give me death!" Drew was raised in Florida where he grew up playing sports and surfing. He attended college at Georgia Tech and worked as an Industrial Designer before entering the ministry in 2000. He has served on campuses all over the country and as a conference speaker spoken with thousands of college students all over the USA and around the world. Drew currently lives in Bozeman Montana with his wife Stacy, and his three kids, Dax, Biz and Garrett. He spends his freetime overlanding, camping with the family, and enjoying all the recreation  that Montana offers. He has a passion to know Christ, make Him known and help others do the same.
-          </p>
-          <p>
-            Fun facts, Drew loves Mexican food (he says Taco Bell counts), he's fanatical about Toyota Land Cruisers and has been in pursuit of the perfect backpack for over 20 years now.
-          </p>
-        </StyledSpeakerInfo>
-      </StyledSpeaker>
-      <VideoCarousel>
-        {videoList}
-      </VideoCarousel>
-      {x > (-100 * sermons.length + 100) ? (<RightButton data-testid='right-arrow' onClick={goRight}><FontAwesomeIcon icon={faChevronRight} /></RightButton>) : (<div></div>)}
-      {x === 0 ? (<div></div>) : (<LeftButton data-testid='left-arrow' onClick={goLeft}><FontAwesomeIcon icon={faChevronLeft} /></LeftButton>)}
-    </StyledSpeakerSection>
+    <>
+      <StyledSpeakerSection>
+        <h1>Conference Speaker</h1>
+        <StyledSpeaker>
+          <img src='https://media-exp1.licdn.com/dms/image/C5603AQHSKoAijeNnzQ/profile-displayphoto-shrink_800_800/0/1517269864460?e=1671062400&v=beta&t=Ml2HYEnDXva1qAvB243PDWzBL8Go9DLhRnyS2ca9L5E' alt='picture of Ben Nugent'/>
+          <StyledSpeakerInfo>
+            
+            <h2>Ben Nugent</h2>
+            <p>
+              Drew Frazer currently serves at Montana State University as a Campus Director with The Navigators. He has worked with college students for the past 22 years and has a love for evangelism and discipleship. He likes to say "Give me a campus or give me death!" Drew was raised in Florida where he grew up playing sports and surfing. He attended college at Georgia Tech and worked as an Industrial Designer before entering the ministry in 2000. He has served on campuses all over the country and as a conference speaker spoken with thousands of college students all over the USA and around the world. Drew currently lives in Bozeman Montana with his wife Stacy, and his three kids, Dax, Biz and Garrett. He spends his freetime overlanding, camping with the family, and enjoying all the recreation  that Montana offers. He has a passion to know Christ, make Him known and help others do the same.
+            </p>
+            <p>
+              Fun facts, Drew loves Mexican food (he says Taco Bell counts), he's fanatical about Toyota Land Cruisers and has been in pursuit of the perfect backpack for over 20 years now.
+            </p>
+          </StyledSpeakerInfo>
+        </StyledSpeaker>
+        <h2>
+          Here’s a couple of recent messages from Ben to help you get to know him - 
+        </h2>
+        <VideoCarousel>
+          {videoList}
+        </VideoCarousel>
+        {x > (-100 * sermons.length + 100) ? (<RightButton data-testid='right-arrow' onClick={goRight}><FontAwesomeIcon icon={faChevronRight} /></RightButton>) : (<div></div>)}
+        {x === 0 ? (<div></div>) : (<LeftButton data-testid='left-arrow' onClick={goLeft}><FontAwesomeIcon icon={faChevronLeft} /></LeftButton>)}
+      </StyledSpeakerSection>
+      <BackToTop onClick={() => { handleScroll('title-bar'); console.log('clicked')}}>top <FontAwesomeIcon icon={faChevronUp} /></BackToTop>
+    </>
   )
 }
