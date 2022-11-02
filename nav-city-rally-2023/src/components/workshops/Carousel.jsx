@@ -40,7 +40,7 @@ const WorkShopList = styled.div`
     font-size: 3rem;
     text-align: center;
     color: #004d4d;
-    background-color: #ffffff6e;
+    background-color: #ffffffbf;
     padding: 2rem;
     width: 96vw;
     border-top: 1px solid #004d4d;

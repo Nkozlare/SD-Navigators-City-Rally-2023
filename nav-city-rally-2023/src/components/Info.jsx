@@ -124,7 +124,7 @@ export default function Info () {
     <>
       <StyledInfo>
         <h1>
-          A One-Day SD Navigators Discipleship Conference
+        San Diego Navigators City Conference
         </h1>
         <RegisterButton>
           Register here
@@ -134,8 +134,9 @@ export default function Info () {
         <StyledImage id='info'>
           <div>
             <h1 >
-              RALLY 2023<br></br>
               A Navigators Conference
+              <br></br>
+              RALLY 2023
             </h1>
             <h2>
               General Info

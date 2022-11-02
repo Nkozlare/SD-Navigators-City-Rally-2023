@@ -21,6 +21,7 @@ const StyledTitle = styled(StyledSection)`
 const StyledLinks = styled(StyledSection)`
   flex-direction: row;
   gap: 2rem;
+  margin-top: 3rem;
   a {
     text-decoration: none;
     color: #dddddd;
@@ -49,9 +50,6 @@ export default function TitleBar () {
   return (
     <StyledTitle>
       <img src='https://www.navigators.org/wp-content/uploads/2018/04/Navigators-Favicon.png'/>
-      <h1>
-        San Diego Navigators
-      </h1>
       <StyledLinks>
       <a href='https://www.w3schools.com' target='_blank'>Register</a>
       <a onClick={() => { handleScroll("info")}}>Info</a>

@@ -28,6 +28,7 @@ const StyledSpeaker = styled(StyledSection)`
   gap: 8rem;
   img {
     height: 28rem;
+    border: 1px solid #004d4d;
   }
   @media (max-width: 1200px) {
     flex-direction: column-reverse;
@@ -41,6 +42,7 @@ const StyledSpeaker = styled(StyledSection)`
 
 const StyledSpeakerInfo = styled(StyledSection)`
   width: 30rem;
+  margin-top: -5rem;
   p {
     font-weight: bold;
     text-indent: 2rem;
@@ -117,10 +119,6 @@ export default function Speaker () {
     {
       url: 'ewPV3wHHVLE',
       title: 'Anxiety'
-    },
-    {
-      url: '5WD5BhKtHLc',
-      title: 'Indirect Leadership'
     }
   ])
 
@@ -153,20 +151,21 @@ export default function Speaker () {
       <StyledSpeakerSection>
         <h1>Conference Speaker</h1>
         <StyledSpeaker>
-          <img src='https://media-exp1.licdn.com/dms/image/C5603AQHSKoAijeNnzQ/profile-displayphoto-shrink_800_800/0/1517269864460?e=1671062400&v=beta&t=Ml2HYEnDXva1qAvB243PDWzBL8Go9DLhRnyS2ca9L5E' alt='picture of Ben Nugent'/>
+          <img src='https://i.ibb.co/wrJZ9gy/Ben-Nugent-headshot-10-22.jpg' alt='picture of Ben Nugent'/>
           <StyledSpeakerInfo>
             
             <h2>Ben Nugent</h2>
             <p>
-              Drew Frazer currently serves at Montana State University as a Campus Director with The Navigators. He has worked with college students for the past 22 years and has a love for evangelism and discipleship. He likes to say "Give me a campus or give me death!" Drew was raised in Florida where he grew up playing sports and surfing. He attended college at Georgia Tech and worked as an Industrial Designer before entering the ministry in 2000. He has served on campuses all over the country and as a conference speaker spoken with thousands of college students all over the USA and around the world. Drew currently lives in Bozeman Montana with his wife Stacy, and his three kids, Dax, Biz and Garrett. He spends his freetime overlanding, camping with the family, and enjoying all the recreation  that Montana offers. He has a passion to know Christ, make Him known and help others do the same.
+              Ben met Christ late in high school and met The Navigators his first day on campus at Illinois State University, where he graduated with a degree in History Education. He met his wife Melissa at a Navigator Summer Training Program in 1996, they have now been married for 24 years. Their son Sam is 15 and their daughter Vivian is 12. 
             </p>
             <p>
-              Fun facts, Drew loves Mexican food (he says Taco Bell counts), he's fanatical about Toyota Land Cruisers and has been in pursuit of the perfect backpack for over 20 years now.
+              Ben and Melissa served with the Collegiate Navigators at Colorado State University, the University of Florida, and Kansas City, MO for nearly two decades. He was the Director for Navigators 20s for 2 years and now serves as the U.S. Collegiate Director. 
+              His passions include developing laborers for God’s harvest, teaching the Word of God, Summer Training Programs, and discipling younger men to become leaders. He enjoys playing golf, getting creamed in Madden by his son, Sam, and eating anything that is “Chicago Style.
             </p>
           </StyledSpeakerInfo>
         </StyledSpeaker>
-        <h2>
-          Here’s a couple of recent messages from Ben to help you get to know him - 
+        <h2 style={{color: '#004d4d'}}>
+          Here’s a sermon sample from Ben to help you get to know him… 
         </h2>
         <VideoCarousel>
           {videoList}
