@@ -23,6 +23,10 @@ const Components = styled.div`
   color: #dddddd;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
+  @media (max-width: 600px) {
+    max-width: 100vw;
+  }
 `
 
 const StyledSection = styled.div`

@@ -66,7 +66,8 @@ const Event = styled(StyledSection)`
     flex-direction: column;
     text-align: end;
     p {
-      width: 15rem;
+      width: 18rem;
+      font-size: 1rem;
     }
   }
 `

@@ -3,25 +3,33 @@ import styled from 'styled-components';
 import { StyledSection } from '../StyledComponents.jsx'
 
 const StyledTitle = styled(StyledSection)`
-  margin-top: 3rem;
+  flex-direction: row;
+  margin-top: 1rem;
+  margin-bottom: -2rem;
   img {
     width: 10rem;
     height: auto;
+    margin-right: 5rem;
   }
   h1 {
     font-size: 4rem;
   }
   @media (max-width: 800px) {
+    flex-direction: column;
     h1 {
       font-size: 3rem;
       text-align: center;
+    }
+    img {
+      width: 5rem;
+      margin-right: 0rem;
+      margin-bottom: 1rem;
     }
   }
 `
 const StyledLinks = styled(StyledSection)`
   flex-direction: row;
   gap: 2rem;
-  margin-top: 3rem;
   a {
     text-decoration: none;
     color: #dddddd;
@@ -34,7 +42,12 @@ const StyledLinks = styled(StyledSection)`
     }
   }
   @media (max-width: 800px) {
-    flex-direction: column;
+    flex-direction: row;
+    flex-flow: row wrap;
+    gap: 1rem;
+    a {
+      font-size: 1rem;
+    }
   }
 `
 
@@ -51,7 +64,7 @@ export default function TitleBar () {
     <StyledTitle>
       <img src='https://www.navigators.org/wp-content/uploads/2018/04/Navigators-Favicon.png'/>
       <StyledLinks>
-      <a href='https://www.w3schools.com' target='_blank'>Register</a>
+      <a href='https://navigators.regfox.com/rally-2023' target='_blank'>Register</a>
       <a onClick={() => { handleScroll("info")}}>Info</a>
       <a onClick={() => { handleScroll("speaker")}}>Conference Speaker</a>
       <a onClick={() => { handleScroll("workshops")}}>Workshops</a>

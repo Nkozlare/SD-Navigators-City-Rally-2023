@@ -11,14 +11,15 @@ const StyledInfo = styled(StyledSection)`
   background-color: #dddddd;
   width: 100vw;
   border-bottom: 1px solid #004d4d;
+  overflow: hidden;
   h1 {
-    font-size: 2rem;
+    font-size: 1.5rem;
     color: #004d4d;
-    padding-top: 6rem;
+    padding-top: 2rem;
   }
   button {
-    margin-top: 4rem;
-    margin-bottom:6rem;
+    margin-top: 2rem;
+    margin-bottom:2rem;
   }
   @media (max-width: 800px) {
     width: 50rem;
@@ -56,6 +57,7 @@ const StyledImage = styled(StyledSection)`
   }
   div {
     display: flex;
+    overflow: hidden;
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -126,9 +128,11 @@ export default function Info () {
         <h1>
         San Diego Navigators City Conference
         </h1>
-        <RegisterButton>
-          Register here
-        </RegisterButton>
+        <a href='https://navigators.regfox.com/rally-2023' target="_blank">
+          <RegisterButton>
+            Register here
+          </RegisterButton>
+        </a>
       </StyledInfo>
       <StyledMeta>
         <StyledImage id='info'>

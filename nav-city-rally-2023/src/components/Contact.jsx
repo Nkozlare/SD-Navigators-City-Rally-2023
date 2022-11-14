@@ -5,9 +5,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronLeft, faChevronRight, faChevronUp, faChevronDown, faCircle } from '@fortawesome/free-solid-svg-icons'
 
 const StyledContact = styled(StyledSection)`
-  background-color: white;
+  background-color: #dddddd;
   color: #004d4d;
-  padding: 6rem;
+  padding: 4rem;
   width: 100vw;
   p {
     font-size: 1.4rem;
@@ -36,12 +36,20 @@ const StyledContact = styled(StyledSection)`
 `
 
 const BackToTop = styled.div`
+  border-top: 1px solid #004d4d;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background-color: white;
   text-align: center;
   border-bottom: 1px solid #004d4d;
   cursor: pointer;
   font-weight: bold;
   color: #004d4d;
+  img {
+    width: 20rem;
+  }
 `
 
 
@@ -62,11 +70,15 @@ export default function Contact () {
         <p>
         Email: sdnavsrally2023@gmail.com
         </p>
-        <a href='https://www.google.com/maps/place/5333+Lake+Murray+Blvd,+La+Mesa,+CA+91942/@32.7758948,-117.0461977,17z/data=!3m1!4b1!4m5!3m4!1s0x80d956fa8023fce1:0xab59759d56266d91!8m2!3d32.7758948!4d-117.044009' target='blank'> Address: 5333 Lake Murray Blvd, La Mesa, CA 91942</a>
-        <RegisterButton style={{marginTop: '4rem'}}>Register</RegisterButton>
-        <a><img src="https://i.ibb.co/0rS0w64/SD-Nav-Logo.jpg" alt="SD-Nav-Logo" border="0"/></a>
+        <a href='https://navigators.regfox.com/rally-2023' target="_blank"><RegisterButton style={{marginTop: '4rem'}}>Register</RegisterButton></a>
       </StyledContact>
-      <BackToTop onClick={() => { handleScroll('title-bar'); console.log('clicked')}}>top <FontAwesomeIcon icon={faChevronUp} /></BackToTop>
+      <BackToTop onClick={() => { handleScroll('title-bar'); console.log('clicked')}}>
+        <img src="https://i.ibb.co/W0h5ZWy/Black-Logo-on-White.png" alt="SD-Nav-Logo" border="0"/>
+        <div>
+          top 
+          <FontAwesomeIcon icon={faChevronUp} />
+        </div>
+      </BackToTop>
     </>
   )
 }

@@ -11,7 +11,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const WorkshopSection = styled(StyledSection)`
   padding: 4rem;
-  padding-top: 8rem;
+  padding-top: 4rem;
   padding-bottom: 10rem;
   background-color: #ffffff;
   width: 100vw;

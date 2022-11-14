@@ -19,6 +19,19 @@ const StyledSpeakerSection = styled(StyledSection)`
     margin-top: 8rem;
     font-size: 2rem;
     text-align: center;
+    max-width: 90%;
+  }
+  h3 {
+    color: #004d4d;
+    text-align: center;
+    font-size: 2rem;
+    margin-top: 8rem;
+    margin-bottom: -4rem;
+    @media (max-width: 800px) {
+      max-width: 90%;
+      font-size: 1.5rem;
+      margin-bottom: -6rem;
+    }
   }
 `
 
@@ -60,22 +73,14 @@ const StyledSpeakerInfo = styled(StyledSection)`
   }
 `
 
-const VideoCarousel = styled(StyledSection)`
-  flex-direction: row;
-  justify-content: start;
-  overflow: hidden;
-  width: 40rem;
-  margin-top: -8rem;
-  @media (max-width: 800px) {
-    width: 26.5rem;
-  }
-`
-
 const VideoList = styled.div`
   color: #690000;
   text-align: center;
-  padding: 2rem;
+  padding: 0rem;
   transition: 0.8s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   h2 {
     font-size: 1.7rem;
     border-bottom: 1px solid #690000;
@@ -93,13 +98,6 @@ const VideoList = styled.div`
       height: 15rem;
     }
   }
-`
-
-const VideoSection = styled.div`
-  display: flex;
-  align-items: center;
-  flex-direction: row;
-  width: 60rem;
 `
 
 const BackToTop = styled.div`
@@ -137,15 +135,6 @@ export default function Speaker () {
     setx(x - 100);
   }
 
-  const videoList = sermons.map((sermon, i) => {
-    return (
-      <VideoList key={i} style={{transform: `translateX(${x}%)`}}>
-        <h2>Sermon:   {sermon.title}</h2>
-        <YoutubeEmbed embedId={sermon.url}/>
-      </VideoList>
-    )
-  })
-
   return (
     <>
       <StyledSpeakerSection>
@@ -164,12 +153,13 @@ export default function Speaker () {
             </p>
           </StyledSpeakerInfo>
         </StyledSpeaker>
-        <h2 style={{color: '#004d4d'}}>
+        <h3>
           Here’s a sermon sample from Ben to help you get to know him… 
-        </h2>
-        <VideoCarousel>
-          {videoList}
-        </VideoCarousel>
+        </h3>
+        <VideoList>
+          <h2>Sermon:   Anxiety</h2>
+          <YoutubeEmbed embedId='ewPV3wHHVLE'/>
+        </VideoList>
         {x > (-100 * sermons.length + 100) ? (<RightButton data-testid='right-arrow' onClick={goRight}><FontAwesomeIcon icon={faChevronRight} /></RightButton>) : (<div></div>)}
         {x === 0 ? (<div></div>) : (<LeftButton data-testid='left-arrow' onClick={goLeft}><FontAwesomeIcon icon={faChevronLeft} /></LeftButton>)}
       </StyledSpeakerSection>

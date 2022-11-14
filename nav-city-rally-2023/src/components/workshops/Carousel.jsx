@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styled from 'styled-components';
 import {
   StyledSection,
@@ -34,32 +34,44 @@ const WorkShopList = styled.div`
   transition: 1s;
   h2 {
     position: absolute;
-    top: 48%;
+    top: 44%;
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 3rem;
     text-align: center;
     color: #004d4d;
     background-color: #ffffffbf;
-    padding: 2rem;
-    width: 96vw;
+    padding: -1rem;
+    width: 100vw;
     border-top: 1px solid #004d4d;
     border-bottom: 1px solid #004d4d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    h3 {
+      font-size: 2.5rem;
+      text-align: center;
+      max-width: 90%;
+    }
   }
   @media (max-width: 1000px) {
     h2 {
-      width: 92vw;
+      width: 100vw;
       top: 40%;
     }
   }
   @media (max-width: 800px) {
     h2 {
-      width: 90vw;
+      width: 100vw;
+      h3 {
+        font-size: 1.5rem;
+      }
     }
   }
   @media (max-width: 700px) {
     h2 {
-      width: 86vw;
+      width: 100vw;
+      font-size: 1.5rem;
     }
   }
 `
@@ -70,7 +82,8 @@ const WorkshopLeftButton = styled(LeftButton)`
   left: 4rem;
   border-radius: 1rem;
   width: 5rem;
-  margin-top: 16.5rem;
+  height: 2rem;
+  margin-top: 14.5rem;
   &:hover {
     color: #080808;
   }
@@ -86,7 +99,8 @@ const WorkshopRightButton = styled(RightButton)`
   right: 4rem;
   border-radius: 1rem;
   width: 5rem;
-  margin-top: 16.5rem;
+  height: 2rem;
+  margin-top: 14.5rem;
   &:hover {
     color: #080808;
   }
@@ -99,6 +113,8 @@ const WorkshopRightButton = styled(RightButton)`
 
 
 export default function Carousel () {
+  const scrollRef = useRef();
+  const [visible, setVisible] = useState(false);
   var [x, setx] = useState(0)
   let [autoScroll, setAutoScroll] = useState(true);
   let [workshops, setWorkshops] = useState([
@@ -168,25 +184,41 @@ export default function Carousel () {
   }
 
   const timedCarouselShift = () => {
-    setTimeout(() => {
-      if (autoScroll) {
-        if (x > (-100 * workshops.length + 100)) {
-          goRight();
-        } else {
-          setx(0)
+    if (autoScroll) {
+      setTimeout(() => {
+        if (autoScroll) {
+          if (x > (-100 * workshops.length + 100)) {
+            goRight();
+          } else {
+            setx(0)
+          }
         }
-      }
-    }, 6000)
+      }, 6000)
+    }
   }
 
   useEffect(() => {
-    timedCarouselShift();
+    const observer = new IntersectionObserver((entries) => {
+      const entry = entries[0];
+      setVisible(entry.isIntersecting)
+    })
+    observer.observe(scrollRef.current);
+  }, [])
+
+  useEffect(() => {
+    if (visible) {
+      timedCarouselShift();
+    }
   })
 
   let workshopList = workshops.map((workshop, i) => {
     return (
       <WorkShopList  key={i} style={{transform: `translateX(${x}%)`}}>
-        <h2>{workshop.name}</h2>
+        <h2>
+          <h3>
+            {workshop.name}
+          </h3>
+        </h2>
         <Workshop src={workshop.url}/>
       </WorkShopList>
     )
@@ -205,7 +237,7 @@ export default function Carousel () {
 
   return (
     <>
-      <StyledCarousel>
+      <StyledCarousel ref={scrollRef}>
         {workshopList}
       </StyledCarousel>
       <StyledSelectors>

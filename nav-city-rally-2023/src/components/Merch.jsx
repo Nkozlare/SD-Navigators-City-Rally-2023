@@ -9,12 +9,14 @@ import { faChevronLeft, faChevronRight, faChevronUp, faChevronDown } from '@fort
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const MerchSection = styled(StyledSection)`
-  background-color: #dddddd;
+  background-color: white;
+  flex-direction: column;
   width: 100vw;
   color: #690000;
-  padding-bottom: 10rem;
+  padding-bottom: 0rem;
   h1 {
     margin: 5rem;
+    margin-bottom: -2rem;
     font-size: 3.5rem;
     border-bottom: 1px solid;
     width: 40rem;
@@ -27,67 +29,43 @@ const MerchSection = styled(StyledSection)`
   }
   @media (max-width: 800px) {
     width: 35rem;
+    gap: 2rem;
     h1 {
-      width: 100vw;
+      width: 60%;
+      padding-bottom: 1rem;
+      margin-bottom: 1rem;
     }
   }
 `
 
-const WorkshopLeftButton = styled(LeftButton)`
-  position: absolute;
-  color: #353535;
-  left: 1rem;
-  border-radius: 1rem;
-  width: 5rem;
-  margin-top: 16.5rem;
-  &:hover {
-    color: #690000;
-  }
-  @media (max-width: 600px) {
-    left: -1rem;
-  }
-`
-
-const WorkshopRightButton = styled(RightButton)`
-  position: absolute;
-  color: #353535;
-  right: 1rem;
-  border-radius: 1rem;
-  width: 5rem;
-  margin-top: 16.5rem;
-  &:hover {
-    color: #690000;
-  }
-  @media (max-width: 600px) {
-    right: -1rem;
-  }
-`
-
 const MerchCarousel = styled(StyledSection)`
-  overflow: hidden;
-  justify-content: start;
-  flex-direction: right;
   flex-direction: row;
   width: 30vw;
   @media (max-width: 600px) {
     width: 15rem;
+    flex-direction: column;
+    div {
+      margin-bottom: 2rem;
+    }
   }
 `
 
-const Item = styled(StyledSection)`
-  flex-direction: row;
+const Shirt = styled(StyledSection)`
+  flex-direction: column;
   width: 100vw;
-  gap: 10rem;
-  padding: 4rem;
+  gap: 3rem;
+  padding: 5rem;
+  height: 30rem;
+  justify-content: space-between;
+  h2 {
+    margin-bottom: -1rem;
+  }
   img {
     object-fit: cover;
     height: 20rem;
-    width: 15rem;
+    width: 25rem;
   }
-  @media (max-width: 1800px) {
-    gap: 5rem;
-  }
-  @media (max-width: 1400px) {
+  @media (max-width: 800px) {
     flex-direction: column;
     padding: 2rem;
   }
@@ -95,12 +73,31 @@ const Item = styled(StyledSection)`
     flex-direction: column;
     padding:1rem;
     padding: 0;
-    gap: 2rem;
+    gap: 3rem;
     width: 20rem;
+    height: auto;
+    img {
+      object-fit: cover;
+      height: auto;
+      width: 20rem;
+    }
   }
 `
+
+const Journal = styled(Shirt)`
+  img {
+    height: auto;
+    width: 15rem;
+  }
+  @media (max-width: 600px) {
+    img {
+      width: 10rem;
+    }
+  }
+`
+
 const BackToTop = styled.div`
-  background-color: #dddddd;
+  background-color: white;
   text-align: center;
   border-bottom: 1px solid #004d4d;
   cursor: pointer;
@@ -109,49 +106,23 @@ const BackToTop = styled.div`
 `
 
 export default function Merch () {
-  const [merch, setMerch] = useState([
-    {
-      url: 'https://images.unsplash.com/photo-1622445275463-afa2ab738c34?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80',
-      item: 'Shirt'
-    },
-    {
-      url: 'https://images.unsplash.com/photo-1526280760714-f9e8b26f318f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80',
-      item: 'journal'
-    }
-  ])
-  const goLeft = () => {
-    setx(x + 100);
-  }
-  // on click function to move the carousel to the right
-  const goRight = () => {
-    setx(x - 100);
-  }
-  var [x, setx] = useState(0)
-  function handleScroll (section) {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
-    });
-  }
-
-  const merchList = merch.map((item, i) => {
-    return (
-      <Item key={i} style={{transform: `translateX(${x}%)`}}>
-        <img src={item.url}/>
-        <h2>{item.item}</h2>
-      </Item>
-    )
-  })
 
   return (
     <>
       <MerchSection>
-        <h1>Merch!</h1>
+        <h1>
+          Merch
+        </h1>
         <MerchCarousel>
-          {merchList}
+          <Shirt>
+            <h2>Shirt</h2>
+            <img src="https://i.ibb.co/tKtm8TP/Screen-Shot-2022-11-11-at-1-23-26-PM.png"/>
+          </Shirt>
+          <Journal>
+            <h2>Journal</h2>
+            <img src='https://i.ibb.co/W5VFvwq/4imprint-Artwork-Approval.jpg'/>
+          </Journal>
         </MerchCarousel>
-        {x > (-100 * merch.length + 100) ? (<WorkshopRightButton data-testid='right-arrow' onClick={goRight}><FontAwesomeIcon icon={faChevronRight} /></WorkshopRightButton>) : (<div></div>)}
-        {x === 0 ? (<div></div>) : (<WorkshopLeftButton data-testid='left-arrow' onClick={goLeft}><FontAwesomeIcon icon={faChevronLeft} /></WorkshopLeftButton>)}
       </MerchSection>
       <BackToTop onClick={() => { handleScroll('title-bar'); console.log('clicked')}}>top <FontAwesomeIcon icon={faChevronUp} /></BackToTop>
     </>
