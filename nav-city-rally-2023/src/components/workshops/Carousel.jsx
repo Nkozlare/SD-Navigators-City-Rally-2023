@@ -88,7 +88,7 @@ const WorkshopLeftButton = styled(LeftButton)`
     color: #080808;
   }
   @media (max-width: 800px) {
-    margin-top: 47rem;
+    margin-top: 51rem;
     color: #004d4d;
   }
 `
@@ -105,7 +105,7 @@ const WorkshopRightButton = styled(RightButton)`
     color: #080808;
   }
   @media (max-width: 800px) {
-    margin-top: 47rem;
+    margin-top: 51rem;
     color: #004d4d;
   }
 `

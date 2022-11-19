@@ -14,6 +14,13 @@ const StyledTitle = styled(StyledSection)`
   h1 {
     font-size: 4rem;
   }
+  @media (max-width: 1200px) {
+    flex-direction: column;
+    gap: 1rem;
+    img {
+      margin-right: 0rem;
+    }
+  }
   @media (max-width: 800px) {
     flex-direction: column;
     h1 {
@@ -41,10 +48,16 @@ const StyledLinks = styled(StyledSection)`
       color: #690000;
     }
   }
+  @media (max-width: 1200px) {
+    flex-flow: row wrap;
+    gap: 1rem;
+    a {
+      font-size: 1.2rem;
+    }
+  }
   @media (max-width: 800px) {
     flex-direction: row;
     flex-flow: row wrap;
-    gap: 1rem;
     a {
       font-size: 1rem;
     }

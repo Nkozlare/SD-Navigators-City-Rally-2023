@@ -24,6 +24,13 @@ const StyledName = styled(StyledSection)`
       width: 80rem;
       border-bottom: 2px solid #690000;
     }
+    @media (max-width: 1200px) {
+      font-size: 8rem;
+      width: 50rem;
+      &:hover {
+        width: 55rem;
+      }
+    }
     @media (max-width: 800px) {
       font-size: 4rem;
       width: 15rem;

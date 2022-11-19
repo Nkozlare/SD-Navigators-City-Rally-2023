@@ -15,6 +15,9 @@ const StyledSpeakerSection = styled(StyledSection)`
   background-color: #dddddd;
   width: 100vw;
   color: #690000;
+  h1 {
+    text-align: center;
+  }
   h2 {
     margin-top: 8rem;
     font-size: 2rem;
@@ -65,7 +68,7 @@ const StyledSpeakerInfo = styled(StyledSection)`
     text-align: center;
   }
   @media (max-width: 800px) {
-    width: 16rem;
+    width: 85%;
     p {
       text-align: center;
       text-indent: 0rem;

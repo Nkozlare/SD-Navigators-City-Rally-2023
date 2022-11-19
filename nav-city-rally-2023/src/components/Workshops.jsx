@@ -22,6 +22,7 @@ const WorkshopSection = styled(StyledSection)`
   }
   p {
     font-size: 1.5rem;
+    text-align: center;
   }
 `
 const BackToTop = styled.div`
