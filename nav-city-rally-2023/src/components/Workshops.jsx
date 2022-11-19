@@ -17,8 +17,11 @@ const WorkshopSection = styled(StyledSection)`
   width: 100vw;
   color: #690000;
   h1{
-    margin-bottom: 5rem;
+    margin-bottom: 3rem;
     font-size: 3.5rem;
+  }
+  p {
+    font-size: 1.5rem;
   }
 `
 const BackToTop = styled.div`
@@ -46,6 +49,9 @@ export default function Workshops () {
         <h1>
           Workshops
         </h1>
+        <p>
+          You can choose two workshops.
+        </p>
         <Carousel/>
       </WorkshopSection>
       <BackToTop onClick={() => { handleScroll('title-bar'); console.log('clicked')}}>top <FontAwesomeIcon icon={faChevronUp} /></BackToTop>

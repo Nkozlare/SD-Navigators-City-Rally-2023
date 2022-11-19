@@ -83,7 +83,7 @@ const WorkshopLeftButton = styled(LeftButton)`
   border-radius: 1rem;
   width: 5rem;
   height: 2rem;
-  margin-top: 14.5rem;
+  margin-top: 16.5rem;
   &:hover {
     color: #080808;
   }
@@ -100,7 +100,7 @@ const WorkshopRightButton = styled(RightButton)`
   border-radius: 1rem;
   width: 5rem;
   height: 2rem;
-  margin-top: 14.5rem;
+  margin-top: 16.5rem;
   &:hover {
     color: #080808;
   }
@@ -117,6 +117,7 @@ export default function Carousel () {
   const [visible, setVisible] = useState(false);
   var [x, setx] = useState(0)
   let [autoScroll, setAutoScroll] = useState(true);
+  console.log(autoScroll);
   let [workshops, setWorkshops] = useState([
     {
       url: 'https://images.unsplash.com/photo-1533000971552-6a962ff0b9f9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80',
@@ -183,18 +184,16 @@ export default function Carousel () {
     setx(x - 100);
   }
 
-  const timedCarouselShift = () => {
-    if (autoScroll) {
-      setTimeout(() => {
-        if (autoScroll) {
-          if (x > (-100 * workshops.length + 100)) {
+  const timedCarouselShift = (scroll) => {
+    setTimeout(() => {
+      if (scroll) {
+        if (x > (-100 * workshops.length + 100)) {
             goRight();
-          } else {
+        } else {
             setx(0)
-          }
         }
-      }, 6000)
-    }
+      }
+    }, 3000)
   }
 
   useEffect(() => {
@@ -207,7 +206,7 @@ export default function Carousel () {
 
   useEffect(() => {
     if (visible) {
-      timedCarouselShift();
+      timedCarouselShift(autoScroll);
     }
   })
 
