@@ -157,11 +157,11 @@ export default function Speaker () {
           </StyledSpeakerInfo>
         </StyledSpeaker>
         <h3>
-          Here’s a sermon sample from Ben to help you get to know him… 
+          Here is a quick video of Ben introducing himself and his heart for discipleship. 
         </h3>
         <VideoList>
-          <h2>Sermon:   Anxiety</h2>
-          <YoutubeEmbed embedId='ewPV3wHHVLE'/>
+          <h2></h2>
+          <YoutubeEmbed embedId='d1TcRwj4sjw'/>
         </VideoList>
         {x > (-100 * sermons.length + 100) ? (<RightButton data-testid='right-arrow' onClick={goRight}><FontAwesomeIcon icon={faChevronRight} /></RightButton>) : (<div></div>)}
         {x === 0 ? (<div></div>) : (<LeftButton data-testid='left-arrow' onClick={goLeft}><FontAwesomeIcon icon={faChevronLeft} /></LeftButton>)}
