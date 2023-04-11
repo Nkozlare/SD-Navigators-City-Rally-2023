@@ -143,28 +143,18 @@ export default function Speaker () {
       <StyledSpeakerSection>
         <h1>Conference Speaker</h1>
         <StyledSpeaker>
-          <img src='https://i.ibb.co/wrJZ9gy/Ben-Nugent-headshot-10-22.jpg' alt='picture of Ben Nugent'/>
+          <img src='https://static.wixstatic.com/media/22fd5d_a544bea60a1b4cc287c39b4167baca8f~mv2.jpg/v1/fill/w_460,h_860,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Screenshot%202022-09-16%20at%2010_14_edited.jpg' alt='picture of Ben Nugent'/>
           <StyledSpeakerInfo>
             
-            <h2>Ben Nugent</h2>
+            <h2>Drew Frazer</h2>
             <p>
-              Ben met Christ late in high school and met The Navigators his first day on campus at Illinois State University, where he graduated with a degree in History Education. He met his wife Melissa at a Navigator Summer Training Program in 1996, they have now been married for 24 years. Their son Sam is 15 and their daughter Vivian is 12. 
+              Drew Frazer currently serves at Montana State University as a Campus Director with The Navigators. He has worked with college students for the past 23 years and has a love for evangelism and discipleship. He likes to say "Give me a campus or give me death!" Drew was raised in Florida where he grew up playing sports and surfing. He attended college at Georgia Tech and worked as an Industrial Designer before entering the ministry in 2000. He has served on campuses all over the country and as a conference speaker spoken with thousands of college students all over the USA and around the world. Drew currently lives in Bozeman Montana with his wife Stacy, and his three kids, Dax, Biz and Garrett. He spends his freetime overlanding, camping with the family, and enjoying all the recreation  that Montana offers. He has a passion to know Christ, make Him known and help others do the same. 
             </p>
             <p>
-              Ben and Melissa served with the Collegiate Navigators at Colorado State University, the University of Florida, and Kansas City, MO for nearly two decades. He was the Director for Navigators 20s for 2 years and now serves as the U.S. Collegiate Director. 
-              His passions include developing laborers for God’s harvest, teaching the Word of God, Summer Training Programs, and discipling younger men to become leaders. He enjoys playing golf, getting creamed in Madden by his son, Sam, and eating anything that is “Chicago Style.
+            Fun facts, Drew loves Mexican food (he says Taco Bell counts), he's fanatical about Toyota Land Cruisers and has been in pursuit of the perfect backpack for over 20 years now. 
             </p>
           </StyledSpeakerInfo>
         </StyledSpeaker>
-        <h3>
-          Here is a quick video of Ben introducing himself and his heart for discipleship. 
-        </h3>
-        <VideoList>
-          <h2></h2>
-          <YoutubeEmbed embedId='d1TcRwj4sjw'/>
-        </VideoList>
-        {x > (-100 * sermons.length + 100) ? (<RightButton data-testid='right-arrow' onClick={goRight}><FontAwesomeIcon icon={faChevronRight} /></RightButton>) : (<div></div>)}
-        {x === 0 ? (<div></div>) : (<LeftButton data-testid='left-arrow' onClick={goLeft}><FontAwesomeIcon icon={faChevronLeft} /></LeftButton>)}
       </StyledSpeakerSection>
       <BackToTop onClick={() => { handleScroll('title-bar'); console.log('clicked')}}>top <FontAwesomeIcon icon={faChevronUp} /></BackToTop>
     </>
