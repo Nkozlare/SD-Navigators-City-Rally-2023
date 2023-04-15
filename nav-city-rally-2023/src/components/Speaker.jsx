@@ -16,8 +16,19 @@ const StyledSpeakerSection = styled(StyledSection)`
   width: 100vw;
   color: #690000;
   h1 {
-    text-align: center;
-  }
+        font-size: 3rem;
+        border-bottom: 1px solid;
+        width: 40rem;
+        text-align: center;
+        padding-bottom: 2rem;
+        transition: 0.6s;
+        &:hover {
+        width: 30rem;
+        }
+        @media (max-width: 800px) {
+          max-width: 90vw;
+        }
+    }
   h2 {
     margin-top: 8rem;
     font-size: 2rem;
@@ -112,16 +123,78 @@ const BackToTop = styled.div`
   color: #004d4d;
 `
 
+const StyledSermons = styled(StyledSection)`
+  flex-direction: column;
+  background-color: white;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  h2 {
+    color: #690000;
+    width: 70vw;
+    text-align: center;
+  }
+`
+
+const StyledChoices = styled(StyledSection)`
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 80vw;
+  gap: 2rem;
+  p {
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    width: 20rem;
+    height: 5rem;
+    font-size: 1.5rem;
+    text-align: center;
+    background-color: #877777;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+    &:hover {
+      background-color: #573f3f;
+    }
+  }
+`
+
+const Video = styled.iframe`
+    width: 70vw;
+    height: 70vh;
+    @media (max-width: 800px) {
+        height: 30vh;
+    }
+`
+
+const ExpandArea = styled(StyledSection)`
+  height: ${props => (props.expanded ? '80vh' : '0vh')};
+  overflow: hidden;
+  transition: 0.6s;
+  @media (max-width: 800px) {
+        height: 40vh;
+  }
+`
 
 
 export default function Speaker () {
   var [x, setx] = useState(0);
+  let [expanded, setExpanded] = useState(false);
   let [sermons, setSermons] = useState([
     {
-      url: 'ewPV3wHHVLE',
-      title: 'Anxiety'
-    }
+      url: "https://www.youtube.com/embed/O9hSzutTayE",
+      title: 'Sermon One'
+    },
+    {
+      url: "https://www.youtube.com/embed/dOD2ggDBuDE",
+      title: 'Sermon Two'
+    },
+    {
+      url: "https://www.youtube.com/embed/lykXiYwks1k",
+      title: 'Sermon Three'
+    },
   ])
+
+  let [selected, setSelected] = useState(0);
 
   function handleScroll (section) {
     window.scrollTo({
@@ -137,6 +210,21 @@ export default function Speaker () {
   const goRight = () => {
     setx(x - 100);
   }
+
+  const selectionMap = sermons.map((sermon, index) => {
+    return (
+      <p key={index} onClick={() => {
+        setSelected(index);
+        if (index === selected) {
+          setExpanded(false);
+        } else {
+          setExpanded(true);
+        }
+      }}>
+        {expanded && index === selected ? 'Minimize' : sermon.title} 
+      </p>
+    )
+  })
 
   return (
     <>
@@ -156,7 +244,22 @@ export default function Speaker () {
           </StyledSpeakerInfo>
         </StyledSpeaker>
       </StyledSpeakerSection>
+      {/* <StyledSermons>
+        <h2>
+          Talks from the Conference
+        </h2>
+        <StyledChoices>
+          {selectionMap}
+          <ExpandArea expanded={expanded}>
+            <Video src={sermons[selected].url} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></Video>
+          </ExpandArea>
+        </StyledChoices>
+      </StyledSermons> */}
       <BackToTop onClick={() => { handleScroll('title-bar'); console.log('clicked')}}>top <FontAwesomeIcon icon={faChevronUp} /></BackToTop>
     </>
   )
 }
+
+//<iframe width="560" height="315" src="https://www.youtube.com/embed/O9hSzutTayE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+// <iframe width="560" height="315" src="https://www.youtube.com/embed/dOD2ggDBuDE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+// <iframe width="560" height="315" src="https://www.youtube.com/embed/lykXiYwks1k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>

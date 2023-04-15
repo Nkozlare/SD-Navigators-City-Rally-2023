@@ -11,6 +11,9 @@ import Contact from './components/Contact.jsx'
 import Calendar from './components/Calendar.jsx'
 import Copyright from './components/Copyright.jsx'
 import ConferenceName from './components/ConferenceName.jsx'
+import Connections from './components/connections.jsx'
+import Handouts from './components/Handouts.jsx'
+import IntroVideo from './components/IntroVideo.jsx'
 import {
   Body,
   Components
@@ -25,23 +28,15 @@ function App() {
       <Components>
         <TitleBar id='title-bar'/>
         <ConferenceName/>
-        <div>
-          <Info/>
-        </div>
+        {/* <IntroVideo/> */}
         <div id='speaker'>
           <Speaker/>
         </div>
-        <div id='workshops'>
-          <Workshops/>
+        <div id='connection'>
+          <Connections/>
         </div>
-        <div id='calendar'>
-          <Calendar/>
-        </div>
-        <div  id='merch'>
-          <Merch/>
-        </div>
-        <div id='contact'>
-          <Contact/>
+        <div id='handouts'>
+          <Handouts/>
         </div>
         <Copyright/>
       </Components>
