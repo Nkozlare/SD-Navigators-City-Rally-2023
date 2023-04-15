@@ -279,7 +279,7 @@ export default function Handouts () {
   ])
 
   const handoutsMap = workshops.map((workshop, index) => {
-    if (index === 0) {
+    if (index === 0 || index === 9) {
         return (
             <Word101 selected={selected} index={index} onClick={() => {
                 if (selected === index) {
