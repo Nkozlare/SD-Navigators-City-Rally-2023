@@ -77,13 +77,9 @@ export default function TitleBar () {
     <StyledTitle>
       <img src='https://www.navigators.org/wp-content/uploads/2018/04/Navigators-Favicon.png'/>
       <StyledLinks>
-      <a href='https://navigators.regfox.com/rally-2023' target='_blank'>Register</a>
-      <a onClick={() => { handleScroll("info")}}>Info</a>
       <a onClick={() => { handleScroll("speaker")}}>Conference Speaker</a>
-      <a onClick={() => { handleScroll("workshops")}}>Workshops</a>
-      <a onClick={() => { handleScroll("calendar")}}>Calendar</a>
-      <a onClick={() => { handleScroll("merch")}}>Merch</a>
-      <a onClick={() => { handleScroll("contact")}}>Contact</a>
+      <a onClick={() => { handleScroll("connection")}}>Connections</a>
+      <a onClick={() => { handleScroll("handouts")}}>Handouts</a>
       </StyledLinks>
     </StyledTitle>
   )

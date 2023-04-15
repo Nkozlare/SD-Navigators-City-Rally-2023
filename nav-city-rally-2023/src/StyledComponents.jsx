@@ -88,6 +88,79 @@ const RightButton = styled.button`
 const BackToTop = styled.div`
 `
 
+const ConnectionSection = styled.div`
+  width: 100vw;
+  color: #690000;
+  display: flex;
+  flex-direction: column;
+  padding-top: 2rem;
+  padding-bottom: 0rem;
+  align-items: center;
+  justify-content: center;
+  h2 {
+    color: #004d4d;
+    margin-bottom: 3rem;
+    text-align: center;
+    width: 90vw;
+  }
+`
+
+const Wrapped = styled.div`
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+`
+
+const ConnectionSquare = styled.div`
+    width: 45rem;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    img {
+      border: 1px solid #004d4d;
+      height: auto;
+      min-width: 15rem;
+      width: 15rem;
+      margin-right: 2rem;
+    }
+    ul {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 20rem;
+      li {
+        width: 30rem;
+        list-style-type: none;
+        max-width: 80vw;
+        a {
+          color: #690000;
+        }
+      }
+    }
+    @media (max-width: 800px) {
+      flex-direction: column;
+      border-bottom: 1px solid #004d4d;
+      padding-top: 1rem;
+      img {
+        margin: 0rem;
+      }
+      ul {
+        padding: 0rem;
+        li {
+          font-size: 1.2rem;
+          a {
+            overflow-wrap: break-word;
+          };
+          text-align: center;
+        }
+      }
+    }
+`
+
 export {
   Body,
   Components,
@@ -96,4 +169,7 @@ export {
   RightButton,
   LeftButton,
   BackToTop,
+  ConnectionSection,
+  ConnectionSquare, 
+  Wrapped
 }
