@@ -11,7 +11,7 @@ import Contact from './components/Contact.jsx'
 import Calendar from './components/Calendar.jsx'
 import Copyright from './components/Copyright.jsx'
 import ConferenceName from './components/ConferenceName.jsx'
-import Connections from './components/connections.jsx'
+import Connections from './components/Connections.jsx'
 import Handouts from './components/Handouts.jsx'
 import IntroVideo from './components/IntroVideo.jsx'
 import {
