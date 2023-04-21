@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import styled from 'styled-components';
 import { StyledSection, ConnectionSection, ConnectionSquare, Wrapped } from '../../StyledComponents.jsx'
 
+
 const StyledCollegiate = styled(ConnectionSection)`
     background-color: #879a9a;
     h2 {
@@ -16,9 +17,9 @@ const StyledCollegiate = styled(ConnectionSection)`
 
 
 export default function Tijuana ({contact}) {
-    let contactMap = contact.map((person) => {
+    let contactMap = contact.map((person, index) => {
         return (
-            <ConnectionSquare>
+            <ConnectionSquare key={index}>
                 <img src={person.photoUrl} alt={person.name}/>
                 <ul>
                     <li style={{fontWeight: 'bold'}}>
@@ -46,7 +47,7 @@ export default function Tijuana ({contact}) {
       })
   return (
     <StyledCollegiate>
-        <h1>Tijuana</h1>
+        <h1 id="tijuana">Tijuana</h1>
         <h2>Family and Church Ministries</h2>
         <Wrapped>
             {contactMap}

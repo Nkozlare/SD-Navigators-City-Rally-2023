@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import styled from 'styled-components';
 import { StyledSection, ConnectionSection, ConnectionSquare, Wrapped } from '../../StyledComponents.jsx'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faChevronLeft, faChevronRight, faChevronUp, faChevronDown, faCircle } from '@fortawesome/free-solid-svg-icons'
 
 const StyledCollegiate = styled(ConnectionSection)`
     background-color: #b7a7a7;
@@ -11,14 +13,28 @@ const StyledCollegiate = styled(ConnectionSection)`
         margin: 1rem;
 
     }
+    p {
+        margin-top: 0rem;
+        font-size: 1rem;
+        cursor: pointer;
+    }
 `
 
 
 
 export default function Collegiate ({contact}) {
-    let contactMap = contact.map((person) => {
+    function handleScroll (section) {
+        let offsetTop  = document.getElementById(section).offsetTop;
+        window.scrollTo({
+          top: offsetTop-0,
+          behavior: "smooth"
+        });
+        console.log('clicked')
+    }
+
+    let contactMap = contact.map((person, index) => {
         return (
-            <ConnectionSquare>
+            <ConnectionSquare key={index}>
                 <img src={person.photoUrl} alt={person.name}/>
                 <ul>
                     <li style={{fontWeight: 'bold'}}>
@@ -50,6 +66,9 @@ export default function Collegiate ({contact}) {
   return (
     <StyledCollegiate>
         <h1>In San Diego</h1>
+        <p onClick={() => {
+            handleScroll("tijuana");
+        }}>Jump To Tijuana Contact<br></br><FontAwesomeIcon icon={faChevronDown} /></p>
         <h2>Collegiate</h2>
         <Wrapped>
             {contactMap}

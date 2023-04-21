@@ -36,7 +36,7 @@ export default function IntroVideo () {
   return (
     <VideoSection>
         <h1>
-            San Diego Nav City Video
+            San Diego Navs
         </h1>
         <Video src="https://www.youtube.com/embed/zOIAI615Wj0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></Video>      
       </VideoSection>

@@ -10,9 +10,9 @@ const StyledSanDiego = styled(ConnectionSection)`
 `
 
 export default function SandDiego ({contact}) {
-  let contactMap = contact.map((person) => {
+  let contactMap = contact.map((person, index) => {
     return (
-        <ConnectionSquare>
+        <ConnectionSquare key={index}>
             <img src={person.photoUrl} alt={person.name}/>
             <ul>
                 <li style={{fontWeight: 'bold'}}>
