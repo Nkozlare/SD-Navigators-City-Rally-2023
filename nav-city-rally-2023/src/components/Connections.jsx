@@ -163,7 +163,7 @@ export default function Connections () {
         numbers: [],
         photoUrl: 'https://i.ibb.co/mrnbW0w/Klingforth-Family.jpg"',
         area: 'Disciplemakers for Life',
-        specific: 'I-58 (Ministry to the Underprivileged)'
+        specific: 'I-58 (Making Disciples Among Marginalized Urban Communities)'
     },
     {
         name: 'Dave Haigh',
@@ -227,7 +227,7 @@ export default function Connections () {
         numbers: ['760-668-0206'],
         photoUrl: 'https://i.ibb.co/dBXPTGP/Frank-Christian.jpg',
         area: 'Military',
-        specific: '',
+        specific: 'Marines in San Diego',
     },
     {
         name: 'Carlos Ricoy',

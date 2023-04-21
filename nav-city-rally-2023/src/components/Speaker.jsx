@@ -115,7 +115,7 @@ const VideoList = styled.div`
 `
 
 const BackToTop = styled.div`
-  background-color: #dddddd;
+  background-color: white;
   text-align: center;
   border-bottom: 1px solid #004d4d;
   cursor: pointer;
@@ -160,18 +160,18 @@ const StyledChoices = styled(StyledSection)`
 
 const Video = styled.iframe`
     width: 70vw;
-    height: 70vh;
+    height: 80vh;
     @media (max-width: 800px) {
         height: 30vh;
     }
 `
 
 const ExpandArea = styled(StyledSection)`
-  height: ${props => (props.expanded ? '80vh' : '0vh')};
+  height: ${props => (props.expanded ? '100vh' : '0vh')};
   overflow: hidden;
   transition: 0.6s;
   @media (max-width: 800px) {
-        height: 40vh;
+        height: ${props => (props.expanded ? '40vh' : '0vh')};
   }
 `
 
@@ -181,20 +181,23 @@ export default function Speaker () {
   let [expanded, setExpanded] = useState(false);
   let [sermons, setSermons] = useState([
     {
-      url: "https://www.youtube.com/embed/O9hSzutTayE",
-      title: 'Sermon One'
+      url: "https://www.youtube.com/embed/hhomfjpuzRM",
+      title: 'Session One',
+      recent: true
     },
     {
-      url: "https://www.youtube.com/embed/dOD2ggDBuDE",
-      title: 'Sermon Two'
+      url: "https://www.youtube.com/embed/mxN-xdfoeEc",
+      title: 'Session Two',
+      recent: false
     },
     {
-      url: "https://www.youtube.com/embed/lykXiYwks1k",
-      title: 'Sermon Three'
+      url: "https://www.youtube.com/embed/uOarDKuASkY",
+      title: 'Session Three',
+      recent: false
     },
   ])
 
-  let [selected, setSelected] = useState(0);
+  
 
   function handleScroll (section) {
     window.scrollTo({
@@ -210,18 +213,22 @@ export default function Speaker () {
   const goRight = () => {
     setx(x - 100);
   }
-
+  
+  let [selected, setSelected] = useState(0);
+  let [recent, setRecent] = useState(false);
   const selectionMap = sermons.map((sermon, index) => {
     return (
       <p key={index} onClick={() => {
         setSelected(index);
-        if (index === selected) {
-          setExpanded(false);
-        } else {
-          setExpanded(true);
-        }
+        setExpanded(true);
       }}>
-        {expanded && index === selected ? 'Minimize' : sermon.title} 
+        {expanded && selected === index ? 
+        <span style={{color: '#000000'}}>
+          {sermon.title} 
+        </span> :
+        <span>
+          {sermon.title} 
+        </span>}
       </p>
     )
   })
@@ -244,7 +251,7 @@ export default function Speaker () {
           </StyledSpeakerInfo>
         </StyledSpeaker>
       </StyledSpeakerSection>
-      {/* <StyledSermons>
+      <StyledSermons>
         <h2>
           Talks from the Conference
         </h2>
@@ -252,14 +259,14 @@ export default function Speaker () {
           {selectionMap}
           <ExpandArea expanded={expanded}>
             <Video src={sermons[selected].url} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></Video>
+            <p onClick={() => (
+              setExpanded(false)
+            )}>Minimize</p>
           </ExpandArea>
         </StyledChoices>
-      </StyledSermons> */}
+      </StyledSermons>
       <BackToTop onClick={() => { handleScroll('title-bar'); console.log('clicked')}}>top <FontAwesomeIcon icon={faChevronUp} /></BackToTop>
     </>
   )
 }
 
-//<iframe width="560" height="315" src="https://www.youtube.com/embed/O9hSzutTayE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-// <iframe width="560" height="315" src="https://www.youtube.com/embed/dOD2ggDBuDE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-// <iframe width="560" height="315" src="https://www.youtube.com/embed/lykXiYwks1k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>

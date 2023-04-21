@@ -27,6 +27,9 @@ const Video = styled.iframe`
     @media (max-width: 800px) {
         height: 50vh;
     }
+    @media (max-width: 450px) {
+        height: 30vh;
+    }
 `
 
 export default function IntroVideo () {
@@ -35,7 +38,7 @@ export default function IntroVideo () {
         <h1>
             San Diego Nav City Video
         </h1>
-        <Video src="https://www.youtube.com/embed/uOJx-p_r5Mk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></Video>
-    </VideoSection>
+        <Video src="https://www.youtube.com/embed/zOIAI615Wj0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></Video>      
+      </VideoSection>
   )
 }

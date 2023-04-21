@@ -133,7 +133,7 @@ const ConnectionSquare = styled.div`
       justify-content: center;
       height: 20rem;
       li {
-        width: 30rem;
+        width: 25rem;
         list-style-type: none;
         max-width: 80vw;
         a {

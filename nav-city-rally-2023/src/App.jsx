@@ -28,7 +28,7 @@ function App() {
       <Components>
         <TitleBar id='title-bar'/>
         <ConferenceName/>
-        {/* <IntroVideo/> */}
+        <IntroVideo/>
         <div id='speaker'>
           <Speaker/>
         </div>

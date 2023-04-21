@@ -120,6 +120,13 @@ export default function Handouts () {
     setExpanded(!expanded)
   }
 
+  function handleScroll (section) {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  }
+
   const [selected, setSelected] = useState(null);
 
   const [workshops, setWorkshops] = useState([
