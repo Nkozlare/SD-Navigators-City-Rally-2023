@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "start": "nodemon server"
+    "start": "serve /.dist"
   },
   "dependencies": {
     "@fortawesome/free-solid-svg-icons": "^6.2.0",
@@ -22,6 +22,7 @@
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "serve": "^14.2.0",
     "styled-components": "^5.3.6",
     "url": "^0.11.0"
   },
