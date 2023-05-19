@@ -23,6 +23,7 @@ import Spanish from '../../dist/assets/SpanishLanguage.pdf'
 import ImageOne from '../../dist/assets/ImageOfGod.pdf'
 import ImageTwo from '../../dist/assets/ImageOfGodPartTwo.pdf'
 import ImagePPT from '../../dist/assets/ImageOfGodPpt.pdf'
+import smallGroups from '../../dist/assets/smallGroups.pdf'
 
 const HandoutsSection = styled(StyledSection)`
     background-color: #dddddd;
@@ -225,8 +226,8 @@ export default function Handouts () {
         name: 'Leading a Small Group People Actually Want to Come to',
         handouts: [
             {
-                title: 'Available Soon',
-                file: '',
+                title: 'Small Groups Workshop Handout',
+                file: smallGroups,
             }
         ],
     },
